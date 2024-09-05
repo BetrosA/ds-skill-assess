@@ -25,6 +25,23 @@ This repository contains a short, notional example of SQL & R files designed to 
 
 *GOOD LUCK!*
   
-## About My Submission: `[Insert your First Name, Last Name]`
-Replace with your own narrative
+## About My Submission: Betros Abraha
 
+### Overall Approach
+
+This submission is aimed at improving the data processing pipeline by fixing issues in both the SQL and R files. The main objective was to ensure that the data extracted from the SQL query is correctly formatted for use in the R script, and to make the R code cleaner and easier to maintain. Below is a breakdown of the approach:
+
+### SQL Query Fix
+
+- The original SQL query grouped the data only by `unit_id`, but the R script required the data to be grouped by both `fiscal_year` and `fiscal_month` in addition to `unit_id`.
+- I corrected the SQL query to ensure that the results are grouped by `unit_id`, `fiscal_year`, and `fiscal_month`, providing the correct output that the R script expects. This ensures that the data reflects the total number of applicants per unit, year, and month.
+
+### R Script Refactor
+
+The R script was refactored to make the code more modular and maintainable. I divided the code into three main functions:
+
+1. **Data Preprocessing**: This function handles loading the data and creating new columns for easier analysis.
+2. **Model Fitting**: This function fits a simple linear model using the data.
+3. **Save Results**: This function saves the model's coefficients to a CSV file.
+
+Breaking the code into these functions makes it easier to understand, modify, and extend. If additional changes are required in the future, the functions can be modified without altering the entire script.
